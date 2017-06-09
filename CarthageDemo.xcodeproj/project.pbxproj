@@ -13,7 +13,9 @@
 		240E6A7B1EEA0D430098CBB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 240E6A7A1EEA0D430098CBB6 /* Assets.xcassets */; };
 		240E6A7E1EEA0D430098CBB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240E6A7C1EEA0D430098CBB6 /* LaunchScreen.storyboard */; };
 		240E6A891EEA0D430098CBB6 /* CarthageDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240E6A881EEA0D430098CBB6 /* CarthageDemoTests.swift */; };
-		242763F51EEA25C1007F3DD0 /* Snail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242763F41EEA25C1007F3DD0 /* Snail.framework */; };
+		242763FB1EEB2B64007F3DD0 /* Snail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242763F91EEB2B64007F3DD0 /* Snail.framework */; };
+		242763FC1EEB2B6A007F3DD0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242763F81EEB2B64007F3DD0 /* Quick.framework */; };
+		242763FF1EEB2B85007F3DD0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242763FD1EEB2B82007F3DD0 /* Nimble.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,9 @@
 		240E6A841EEA0D430098CBB6 /* CarthageDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarthageDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		240E6A881EEA0D430098CBB6 /* CarthageDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarthageDemoTests.swift; sourceTree = "<group>"; };
 		240E6A8A1EEA0D430098CBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		242763F41EEA25C1007F3DD0 /* Snail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Snail.framework; path = Carthage/Build/iOS/Snail.framework; sourceTree = "<group>"; };
+		242763F81EEB2B64007F3DD0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		242763F91EEB2B64007F3DD0 /* Snail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Snail.framework; path = Carthage/Build/iOS/Snail.framework; sourceTree = "<group>"; };
+		242763FD1EEB2B82007F3DD0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				242763F51EEA25C1007F3DD0 /* Snail.framework in Frameworks */,
+				242763FB1EEB2B64007F3DD0 /* Snail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242763FC1EEB2B6A007F3DD0 /* Quick.framework in Frameworks */,
+				242763FF1EEB2B85007F3DD0 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +109,9 @@
 		242763F31EEA229E007F3DD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				242763F41EEA25C1007F3DD0 /* Snail.framework */,
+				242763FD1EEB2B82007F3DD0 /* Nimble.framework */,
+				242763F81EEB2B64007F3DD0 /* Quick.framework */,
+				242763F91EEB2B64007F3DD0 /* Snail.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 				240E6A801EEA0D430098CBB6 /* Sources */,
 				240E6A811EEA0D430098CBB6 /* Frameworks */,
 				240E6A821EEA0D430098CBB6 /* Resources */,
+				242763F71EEB2B4A007F3DD0 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,6 +224,22 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Snail.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		242763F71EEB2B4A007F3DD0 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -405,6 +430,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CarthageDemoTests;
@@ -419,6 +448,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CarthageDemoTests;
