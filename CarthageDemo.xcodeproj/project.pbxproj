@@ -13,6 +13,7 @@
 		240E6A7B1EEA0D430098CBB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 240E6A7A1EEA0D430098CBB6 /* Assets.xcassets */; };
 		240E6A7E1EEA0D430098CBB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240E6A7C1EEA0D430098CBB6 /* LaunchScreen.storyboard */; };
 		240E6A891EEA0D430098CBB6 /* CarthageDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240E6A881EEA0D430098CBB6 /* CarthageDemoTests.swift */; };
+		242763F51EEA25C1007F3DD0 /* Snail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242763F41EEA25C1007F3DD0 /* Snail.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		240E6A841EEA0D430098CBB6 /* CarthageDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarthageDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		240E6A881EEA0D430098CBB6 /* CarthageDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarthageDemoTests.swift; sourceTree = "<group>"; };
 		240E6A8A1EEA0D430098CBB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		242763F41EEA25C1007F3DD0 /* Snail.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Snail.framework; path = Carthage/Build/iOS/Snail.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242763F51EEA25C1007F3DD0 /* Snail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 			children = (
 				240E6A721EEA0D430098CBB6 /* CarthageDemo */,
 				240E6A871EEA0D430098CBB6 /* CarthageDemoTests */,
+				242763F31EEA229E007F3DD0 /* Frameworks */,
 				240E6A711EEA0D420098CBB6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +98,14 @@
 				240E6A8A1EEA0D430098CBB6 /* Info.plist */,
 			);
 			path = CarthageDemoTests;
+			sourceTree = "<group>";
+		};
+		242763F31EEA229E007F3DD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				242763F41EEA25C1007F3DD0 /* Snail.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +353,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CarthageDemo;
@@ -353,6 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CarthageDemo;
