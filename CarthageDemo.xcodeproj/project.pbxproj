@@ -118,6 +118,7 @@
 				240E6A6C1EEA0D420098CBB6 /* Sources */,
 				240E6A6D1EEA0D420098CBB6 /* Frameworks */,
 				240E6A6E1EEA0D420098CBB6 /* Resources */,
+				242763F61EEB0334007F3DD0 /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +206,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		242763F61EEB0334007F3DD0 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Snail.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		240E6A6C1EEA0D420098CBB6 /* Sources */ = {
